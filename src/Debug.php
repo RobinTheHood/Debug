@@ -37,7 +37,7 @@ class Debug
     {
         echo '<pre>';
         print_r($mix);
-        echo '</pre';
+        echo '</pre>';
     }
 
     public static function debug($string)
