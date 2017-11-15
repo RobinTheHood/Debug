@@ -36,7 +36,7 @@ class Debug
     private static function outHtml($mix, $level)
     {
         echo '<pre>';
-        print_($mix);
+        print_r($mix);
         echo '</pre';
     }
 
