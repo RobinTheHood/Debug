@@ -1,7 +1,7 @@
 <?php
-namespace Debug;
+namespace RobinTheHood\Debug;
 
-use Terminal\Terminal;
+use RobinTheHood\Terminal\Terminal;
 
 class Debug
 {
