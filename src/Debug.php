@@ -1,18 +1,19 @@
 <?php
+
 namespace RobinTheHood\Debug;
 
 use RobinTheHood\Terminal\Terminal;
 
 class Debug
 {
-    const LEVEL_DEBUG = 0;
-    const LEVEL_NOTICE = 1;
-    const LEVEL_WARNING = 2;
-    const LEVEL_ERROR = 3;
+    public const LEVEL_DEBUG = 0;
+    public const LEVEL_NOTICE = 1;
+    public const LEVEL_WARNING = 2;
+    public const LEVEL_ERROR = 3;
 
     public static function out($string, $level = Debug::LEVEL_DEBUG)
     {
-        if(self::isCommandLineInterface()) {
+        if (self::isCommandLineInterface()) {
             self::outTerminal($string, $level);
         } else {
             self::outHtml($string, $level);
@@ -23,11 +24,11 @@ class Debug
     {
         if ($level == Debug::LEVEL_DEBUG) {
             $color = Terminal::WHITE;
-        } else if ($level == Debug::LEVEL_NOTICE) {
+        } elseif ($level == Debug::LEVEL_NOTICE) {
             $color = Terminal::YELLOW;
-        } else if ($level == Debug::LEVEL_WARNING) {
+        } elseif ($level == Debug::LEVEL_WARNING) {
             $color = Terminal::ORANGE;
-        } else if ($level == Debug::LEVEL_ERROR) {
+        } elseif ($level == Debug::LEVEL_ERROR) {
             $color = Terminal::RED;
         }
         Terminal::outln($string, $color);
